@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lo Sperone in Umbrien</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <title>Casa Lo Sperone</title>
   <style>
     body { font-family: sans-serif; margin: 0; padding: 0; line-height: 1.6; }
     header {
@@ -96,6 +98,7 @@ showinfo=0
 
   <section id="lage">
     <h2 id="lageTitle">Lage & Umgebung</h2>
+    <div id="map" style="height: 600px;"></div>
     <ul>
       <li>Campingplatz "Il Naturale": 4 km</li>
       <li>Arztpraxis Dr. Rossi: 6 km</li>
@@ -141,6 +144,7 @@ showinfo=0
   </footer>
 
   <script>
+    drawmap()
     function switchLanguage(lang) {
       const url = new URL(window.location);
       url.searchParams.set('lang', lang);
@@ -206,6 +210,95 @@ showinfo=0
     }
 
     applyTranslations(getLangParam());
+
+    function drawmap(){
+const train = L.icon({
+  iconUrl: './icon/train.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+})
+const airport = L.icon({
+  iconUrl: './icon/airport.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+const home = L.icon({
+  iconUrl: './icon/home.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+const cross = L.icon({
+  iconUrl: './icon/cross.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+const food = L.icon({
+  iconUrl: './icon/food.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+
+const tank = L.icon({
+  iconUrl: './icon/tank.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+
+const camper = L.icon({
+  iconUrl: './icon/camper.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+
+const medical = L.icon({
+  iconUrl: './icon/medical.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+const repair = L.icon({
+  iconUrl: './icon/repair.png',
+  iconSize: [30, 30],
+  iconAnchor: [15, 30],
+  popupAnchor: [0, -30]
+});
+
+
+
+       // Karte zentriert auf Wohnort (z.B. Florenz, Italien)
+  const map = L.map('map').setView([42.80333138386886, 12.08737516474623], 13); // Breite, Länge, Zoom
+
+  // OpenStreetMap Tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap-Mitwirkende'
+  }).addTo(map);
+
+
+  // POIs in der Nähe
+  const pois = [
+    { name: "Bahnhof Orvieto (14km, 17min)",icon:train, coords: [42.72327350333553, 12.127713814298094] },
+    { name: "Casa Lo Sperone",icon:home, coords: [42.80333138386886, 12.08737516474623] },
+    { name: "Flughafen Florenz",icon:airport, coords: [43.8085, 11.2005] },
+    { name: "Doumo di Orvieto (18km, 23min)",icon:cross, coords: [42.71701143590474, 12.113316063743257] },
+    { name: "Camper Ficulle",icon:camper, coords: [  42.830418451749196, 12.068421643335169] },
+
+    { name: "Bahnhof Fabro (13km, 17min)",icon:train, coords: [    42.87468403728061, 12.041244221732006] }
+
+
+  
+  ];
+
+  pois.forEach(poi => {
+    L.marker(poi.coords,{ icon: poi.icon }).addTo(map).bindPopup(poi.name);
+  });
+    }
   </script>
 </body>
 </html>
