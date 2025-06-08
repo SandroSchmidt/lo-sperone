@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lo Sperone in Umbrien</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    header {
+      background: #6b8e23 url('bilder/headerbild.jpg') center/cover no-repeat;
+      color: white;
+      padding: 2em 1em;
+      text-align: center;
+      position: relative;
+      
+  background-image: url('./img/tuscany2.jpg');
+  background-size: cover;     /* Bild skaliert, um das ganze div auszufüllen */
+  background-position: center; /* Zentriert das Bild */
+  background-repeat: no-repeat;
+  position: relative;          /* wichtig für z-index-Steuerung */
+
+
+
+    }
+    nav, section, footer { padding: 1em; max-width: 900px; margin: auto; }
+    h2 { border-bottom: 2px solid #ddd; padding-bottom: 0.2em; margin-top: 2em; }
+    .gallery img { width: 100%; max-width: 300px; margin: 0.5em; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 1em; justify-content: center; }
+    iframe { width: 100%; height: 315px; border: none; }
+    .language-switcher {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .language-switcher button {
+      margin-left: 5px;
+      background: white;
+      border: none;
+      cursor: pointer;
+      padding: 0.2em 0.5em;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+    <script>
+    // Passwortschutz (einmalig)
+    if (!localStorage.getItem("access_granted")) {
+      let pw = prompt("Bitte gib das Passwort ein:");
+      if (pw !== "sandropaola") {
+        alert("Falsches Passwort. Die Seite wird geschlossen.");
+        document.body.innerHTML = "";
+        throw new Error("Zugriff verweigert");
+      } else {
+        localStorage.setItem("access_granted", "true");
+      }
+    }
+  </script>
+  <header>
+    
+    <h1 id="title">Willkommen bei Lo Sperone in Umbrien</h1>
+    <div class="language-switcher">
+      <button onclick="switchLanguage('de')">🇩🇪 DE</button>
+      <button onclick="switchLanguage('it')">🇮🇹 IT</button>
+      <button onclick="switchLanguage('en')">🇬🇧 EN</button>
+    </div>
+  </header>
+    <div class="chapter-buttons">
+      <button onclick="document.getElementById('video').scrollIntoView({ behavior: 'smooth' });">Video</button>
+      <button onclick="document.getElementById('lage').scrollIntoView({ behavior: 'smooth' });">Lage & Umgebung</button>
+      <button onclick="document.getElementById('renovierung').scrollIntoView({ behavior: 'smooth' });">Renovierung</button>
+      <button onclick="document.getElementById('hochzeit').scrollIntoView({ behavior: 'smooth' });">Informationen</button>
+    </div>
+  <section id="video">
+    <h2 id="videoTitle">Video</h2>
+
+    <iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/-mPPOky19HE?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0"
+  title="Casa lo Sperone"
+  frameborder="0"
+  allow="autoplay; encrypted-media"
+  autoplay=1
+mute=1
+controls=0
+modestbranding=1
+rel=0
+showinfo=0
+  allowfullscreen>
+</iframe>
+
+
+    <p id="videoDesc">Ein kurzer Eindruck von Lo Sperone und der Umgebung.</p>
+  </section>
+
+  <section id="lage">
+    <h2 id="lageTitle">Lage & Umgebung</h2>
+    <ul>
+      <li>Campingplatz "Il Naturale": 4 km</li>
+      <li>Arztpraxis Dr. Rossi: 6 km</li>
+      <li>Bahnhof Città della Pieve: 12 km</li>
+    </ul>
+  </section>
+
+  <section id="renovierung">
+    <h2 id="renoTitle">Renovierung & Fortschritt</h2>
+    <div class="gallery">
+      <img src="./" alt="Renovierung Bild 1">
+      <img src="bilder/renovierung2.jpg" alt="Renovierung Bild 2">
+      <img src="bilder/renovierung3.jpg" alt="Renovierung Bild 3">
+    </div>
+  </section>
+
+  <section id="hochzeit">
+    <h2 id="weddingTitle">Informationen zur Hochzeit</h2>
+    <p id="weddingDesc">Wir freuen uns riesig auf die Hochzeit im April 2026! Hier findet ihr bald weitere Infos zu Unterkunft, Ablauf und Treffpunkt.</p>
+  </section>
+
+  <section id="kalender">
+    <h2 id="calendarTitle">Wann wir vor Ort sind</h2>
+    <p id="calendarDesc">Der folgende Kalender zeigt unsere geplanten Aufenthalte:</p>
+  <iframe 
+    src="https://calendar.google.com/calendar/embed?src=87ec05d31524a2c6bb0c649e07431b081e6c69d8e25a6ff7e3f9d12a1ede7c41%40group.calendar.google.com&ctz=Europe%2FBerlin"
+    style="border: 0" 
+    width="100%" 
+    height="600" 
+    frameborder="0" 
+    scrolling="no">
+  </iframe>
+</section>
+
+  <footer>
+    <p id="contactText">Kontakt: <a href="mailto:info@unserhausumbraien.de">info@unserhausumbraien.de</a></p>
+  </footer>
+
+  <script>
+    function switchLanguage(lang) {
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.location.href = url;
+    }
+
+    const translations = {
+      de: {
+        title: "Willkommen bei Lo Sperone in Umbrien",
+        videoTitle: "Video",
+        videoDesc: "Ein kurzer Eindruck von Lo Sperone und der Umgebung.",
+        lageTitle: "Lage & Umgebung",
+        renoTitle: "Renovierung & Fortschritt",
+        weddingTitle: "Informationen zur Hochzeit",
+        weddingDesc: "Wir freuen uns riesig auf die Hochzeit im April 2026! Hier findet ihr bald weitere Infos zu Unterkunft, Ablauf und Treffpunkt.",
+        calendarTitle: "Wann wir vor Ort sind",
+        calendarDesc: "Der folgende Kalender zeigt unsere geplanten Aufenthalte:",
+        contactText: "Kontakt: <a href='mailto:info@unserhausumbraien.de'>info@unserhausumbraien.de</a>"
+      },
+      it: {
+        title: "Benvenuti a Lo Sperone in Umbria",
+        videoTitle: "Video",
+        videoDesc: "Una breve impressione di Lo Sperone e dei dintorni.",
+        lageTitle: "Posizione e dintorni",
+        renoTitle: "Ristrutturazione e progressi",
+        weddingTitle: "Informazioni sul matrimonio",
+        weddingDesc: "Siamo molto felici del matrimonio nell'aprile 2026! Presto troverete ulteriori informazioni su alloggio, programma e luogo dell'incontro.",
+        calendarTitle: "Quando siamo presenti",
+        calendarDesc: "Il seguente calendario mostra i nostri soggiorni previsti:",
+        contactText: "Contatto: <a href='mailto:info@unserhausumbraien.de'>info@unserhausumbraien.de</a>"
+      },
+      en: {
+        title: "Welcome to Lo Sperone in Umbria",
+        videoTitle: "Video",
+        videoDesc: "A short impression of Lo Sperone and the surroundings.",
+        lageTitle: "Location & Surroundings",
+        renoTitle: "Renovation & Progress",
+        weddingTitle: "Wedding Information",
+        weddingDesc: "We are very excited for the wedding in April 2026! More information about accommodation, schedule and meeting point will follow soon.",
+        calendarTitle: "When we're on site",
+        calendarDesc: "The following calendar shows our planned stays:",
+        contactText: "Contact: <a href='mailto:info@unserhausumbraien.de'>info@unserhausumbraien.de</a>"
+      }
+    };
+
+    function getLangParam() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('lang') || 'de';
+    }
+
+    function applyTranslations(lang) {
+      const t = translations[lang] || translations['de'];
+      document.getElementById('title').textContent = t.title;
+      document.getElementById('videoTitle').textContent = t.videoTitle;
+      document.getElementById('videoDesc').textContent = t.videoDesc;
+      document.getElementById('lageTitle').textContent = t.lageTitle;
+      document.getElementById('renoTitle').textContent = t.renoTitle;
+      document.getElementById('weddingTitle').textContent = t.weddingTitle;
+      document.getElementById('weddingDesc').textContent = t.weddingDesc;
+      document.getElementById('calendarTitle').textContent = t.calendarTitle;
+      document.getElementById('calendarDesc').textContent = t.calendarDesc;
+      document.getElementById('contactText').innerHTML = t.contactText;
+    }
+
+    applyTranslations(getLangParam());
+  </script>
+</body>
+</html>
