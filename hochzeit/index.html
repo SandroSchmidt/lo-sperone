@@ -1,52 +1,227 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<title>Punkte mit D3.js – Dreieck zeichnen (Snap), Zoom/Pan & JSON-Import/Export (mit Namensreferenz)</title>
-<script src="https://d3js.org/d3.v7.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hochzeit – Paola & Sandro</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --pad: 10px; }
-  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial; margin: 0; }
-  header { padding: var(--pad); border-bottom: 1px solid #e5e7eb; }
-  .controls { display: flex; flex-wrap: wrap; gap: 12px; padding: var(--pad); align-items: center; }
-  .controls label { white-space: nowrap; }
-  .controls input[type="range"] { vertical-align: middle; }
-  #chart { padding: var(--pad); }
-  button { padding: 8px 12px; border-radius: 8px; border: 1px solid #cbd5e1; background: #fff; cursor: pointer; }
-  button:hover { background: #f8fafc; }
-  button.active { background: #e0f2fe; border-color: #38bdf8; }
-  .hint { font-size: 12px; color: #475569; }
-  .axis path, .axis line { stroke: #94a3b8; }
-  .tri { stroke: rgba(79,70,229,0.9); stroke-width: 2px; }
-  .temp-edge { stroke: #0ea5e9; stroke-dasharhjray: 4 4; stroke-width: 2px; fill: none; }
-  .snap-marker { fill: none; stroke: #0ea5e9; stroke-width: 2px; pointer-events: none; }
-  .picked { fill: #f59e0b !important; stroke: #b45309; }
-  .hidden { display:none; }
+  /* Grundlayout */
+  body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #333;
+    background: #ffffff;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  /* Header mit Foto */
+  header {
+    position: relative;
+    text-align: center;
+    color: #fff;
+  }
+  header::before {
+    content: "";
+    display: block;
+    background: url('header-placeholder.jpg') center/cover no-repeat;
+    width: 100%;
+    height: 400px;
+  }
+  header .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 400px;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin: 0;
+    color: #4b3f2f; /* dunkles Olivengrün */
+  }
+  header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    text-align: center;
+    color: #4b3f2f;
+    margin-top: 15px;
+  }
+
+  /* Sektionen */
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #556B2F; /* Olivengrün */
+  }
+  h3 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    color: #FF6F61; /* Grapefruit */
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  /* Farbige Akzente */
+  .highlight-yellow { color: #FFD700; } /* Narzissengelb */
+  .highlight-grapefruit { color: #FF6F61; } /* Grapefruit */
+
+  /* FAQ Accordion */
+  .accordion { margin-top: 30px; }
+  .accordion-item { border-top: 1px solid #ddd; }
+  .accordion-item button {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+    text-align: left;
+    background: #fdf9f4;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #4b3f2f;
+    transition: background 0.3s;
+  }
+  .accordion-item button:hover { background: #f4f0eb; }
+  .accordion-item .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+    background: #fff;
+  }
+  .accordion-item .content p { padding: 15px 0; margin: 0; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 { font-size: 2.2rem; }
+    header p { font-size: 1rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.1rem; }
+  }
 </style>
 </head>
 <body>
+
 <header>
-  <h2 style="margin:0">Punkte mit D3.js – Dreieck-Zeichnen (Snap), Zoom/Pan & JSON-Import/Export</h2>
-  <div class="hint">Dreiecke speichern jetzt <strong>Namen</strong> statt Indizes, damit die Referenzen stabil bleiben, auch wenn sich die Punktliste ändert.</div>
+  <div class="overlay">
+    <h1>💌 Hochzeit von Paola & Sandro</h1>
+    <p>Wir freuen uns unglaublich, diesen besonderen Tag mit euch zu teilen.<br>
+    Hier findet ihr alle wichtigen Informationen für eure Anreise, Unterkunft und den Ablauf unserer Feier.</p>
+  </div>
 </header>
 
-<div class="controls">
-  <label>Punktgröße: <input id="radiusSlider" type="range" min="1" max="20" step="1" value="4"></label>
-  <span id="radiusVal">4</span>
-  <label>Farbskalierung: <input id="colorSlider" type="range" min="0.1" max="5" step="0.1" value="1"></label>
-  <span id="colorVal">1</span>
-  <button id="btnNew">Neues Dreieck</button>
-  <button id="btnCancel">Abbrechen</button>
-  <button id="btnSave">Save Dreiecke</button>
-  <button id=\"btnExportSTL\">Export STL</button>
-  <button id="btnImport">Import JSON</button>
-  <input id="fileInput" type="file" accept="application/json" class="hidden"/>
-  <span class="hint" id="status">Bereit.</span>
-</div>
+<section>
+  <h2>🌿 Wo findet die Zeremonie & Feier statt?</h2>
+  <p>Unsere freie Trauung findet in unserem Olivenhain bei [INSERT LOCATION] statt – ein Ort, der uns sehr am Herzen liegt. Zwischen Olivenbäumen und schöner Aussicht möchten wir diesen besonderen Moment mit euch genießen.</p>
+</section>
 
-<div id="chart"></div>
-dsfgvfldökglökfmblökfgbnkjfgnbkljfgnbjknfgköbnökjfgnbökfg
+<section>
+  <h2>🚗 Anreise & Parken</h2>
+  <p>Am bequemsten reist ihr mit dem Auto an, da die öffentlichen Verkehrsmittel hier nur selten fahren. Es gibt ausreichend Parkmöglichkeiten vor Ort.</p>
+  <p>Wer mit dem Zug kommt: Von Rom oder Florenz fährt ein direkter Zug nach Orvieto. Von dort sind es ca. 20 Minuten bis zu uns.</p>
+  <p>Bitte organisiert den Transport selbst und tragt im Fragebogen ein, ob ihr mit dem Auto kommt.</p>
+</section>
+
+<section>
+  <h2>👗 Dresscode</h2>
+  <p>Wir freuen uns über frühlingshaft festliche Outfits – gern farbenfroh und leicht. Jeans dürfen diesmal im Schrank bleiben. Denkt an etwas Warmes für den Abend und an Schuhe, die sich auch im Garten gut tragen lassen.</p>
+</section>
+
+<section>
+  <h2>🏡 Unterkunft</h2>
+  <p>Unterkünfte findet ihr über booking.com, Airbnb oder Vrbo. Der nächste Ort ist Ficulle (ca. 5 Minuten Fahrt), Orvieto etwa 20 Minuten entfernt.</p>
+  <p>Da unsere Feier in die Osterzeit fällt, empfiehlt es sich, frühzeitig zu buchen, damit ihr eine passende Unterkunft bekommt. Für Alleinreisende lohnt es sich, früh zu schauen – viele Unterkünfte bieten Apartments oder Zimmer, die sich gut teilen lassen.</p>
+</section>
+
+<section>
+  <h2>🌞 Urlaub in der Region</h2>
+  <p>Die Region rund um unsere Location ist wunderschön – sanfte Hügel, kleine Dörfer, gutes Essen und viel Ruhe.</p>
+  <p>Tipp: Am Ostersonntag spricht der Papst in Rom den traditionellen „Urbi et Orbi“-Segen, weshalb die Stadt sehr voll sein wird.</p>
+</section>
+
+<section>
+  <h2>🕊️ Ablauf der Feier</h2>
+  <p>Wir möchten den Tag entspannt und herzlich mit euch verbringen, mit Zeit zum Ankommen, Genießen und Feiern.</p>
+  <h3>🔥 Donnerstag – Willkommen & BBQ</h3>
+  <p>Für alle, die schon früher anreisen: Am Donnerstag um 17:00 Uhr laden wir euch zu einem BBQ am Haus ein.</p>
+  <h3>💐 Freitag – Der Hochzeitstag</h3>
+  <p><strong>🕒 Ankommen:</strong> Ab 14:30 Uhr seid ihr herzlich willkommen.</p>
+  <p><strong>💍 Freie Trauung:</strong> Um 15:00 Uhr beginnt unsere freie Trauung im Olivenhain.</p>
+  <p><strong>🍰 Kuchen, Kaffee & Tee:</strong> Geburtstagsfeier nachholen.</p>
+  <p><strong>🥂 Aperitif:</strong> Anschließend stoßen wir gemeinsam an – Aperitif, Häppchen, Getränke.</p>
+  <p><strong>🌅 Sonnenuntergang:</strong> Genießen über den Hügeln Umbriens.</p>
+  <p><strong>🍽️ Abendessen:</strong> Mehrgängiges Menü mit regionalen Spezialitäten.</p>
+  <p><strong>💃 Tanz & Feier:</strong> Tanzschuhe anbehalten – wir feiern bis tief in die Nacht.</p>
+  <p><strong>🌙 Mitternachtssnack:</strong> Für alle, die noch Energie haben.</p>
+  <h3>☀️ Samstag – Frühstück</h3>
+  <p>Ab 11:00 Uhr gemütliches Frühstück.</p>
+</section>
+
+<section>
+  <h2>💬 Häufige Fragen (FAQ)</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <button>🍽️ Essen & Trinken</button>
+      <div class="content"><p>Vegetarische Optionen vorhanden. Allergien bitte im Fragebogen eintragen.</p></div>
+    </div>
+    <div class="accordion-item">
+      <button>🎁 Geschenke</button>
+      <div class="content"><p>Eure Anwesenheit ist das schönste Geschenk. Wer möchte, kann zur Renovierungskasse beitragen.</p></div>
+    </div>
+    <div class="accordion-item">
+      <button>👶 Kinder</button>
+      <div class="content"><p>Kinder sind herzlich willkommen!</p></div>
+    </div>
+    <div class="accordion-item">
+      <button>🐾 Haustiere</button>
+      <div class="content"><p>Bitte bringt keine Haustiere mit.</p></div>
+    </div>
+    <div class="accordion-item">
+      <button>📸 Fotos & Social Media</button>
+      <div class="content"><p>Während der Zeremonie keine Fotos. Nachher gern, aber keine Fotos von uns ohne Rücksprache posten.</p></div>
+    </div>
+    <div class="accordion-item">
+      <button>💃 Feier & Party</button>
+      <div class="content"><p>Tanzschuhe einpacken – wir feiern bis tief in die Nacht.</p></div>
+    </div>
+    <div class="accordion-item">
+      <button>🚙 Rückfahrt & Transport</button>
+      <div class="content"><p>Wir überlegen Transfer zu Unterkünften. Bitte Unterkunft im Fragebogen eintragen.</p></div>
+    </div>
+    <div class="accordion-item">
+      <button>📞 Noch Fragen?</button>
+      <div class="content"><p>Direkt an Paola oder Sandro wenden. Anruf oder WhatsApp möglich. 🤍</p></div>
+    </div>
+  </div>
+</section>
+
 <script>
-  </script>
+  document.querySelectorAll('.accordion-item button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
