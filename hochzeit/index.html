@@ -9,9 +9,9 @@
   /* Grundlayout */
   body {
     margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    color: #333;
-    background: #ffffff;
+   font-family: "Bodoni MT", "Didot", "Times New Roman", serif;
+    color: #1e4A5b; 
+    background: #fffff0;
   }
   a { text-decoration: none; color: inherit; }
 
@@ -19,7 +19,7 @@
   header {
     position: relative;
     text-align: center;
-    color: #fff;
+    color: #FF6F61;;
   }
   header::before {
     content: "";
@@ -43,7 +43,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     margin: 0;
-    color: #4b3f2f; /* dunkles Olivengrün */
+   
   }
   header p {
     font-size: 1.2rem;
@@ -63,18 +63,18 @@
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #556B2F; /* Olivengrün */
+ color: #FF6F61; 
   }
   h3 {
     font-size: 1.3rem;
     margin-top: 20px;
-    color: #FF6F61; /* Grapefruit */
+    color: #1e4A5b; /* Grapefruit */
   }
   p {
     font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 20px;
-    color: #333;
+
   }
 
   /* Farbige Akzente */
@@ -113,9 +113,23 @@
     h2 { font-size: 1.6rem; }
     h3 { font-size: 1.1rem; }
   }
+  .language-switcher {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
 </style>
 </head>
 <body>
+
+  <div class="language-switcher">
+      <button onclick="switchLanguage('de')">🇩🇪 DE</button>
+      <button onclick="switchLanguage('it')">🇮🇹 IT</button>
+      <button onclick="switchLanguage('en')">🇬🇧 EN</button>
+    </div>
+<img src="./img/cover.png" style="width : 25%;align-items: center;"><img src="./img/3.png" style="width : 25%;align-items: center;"><img src="./img/4.png" style="width : 25%;align-items: center;"><br>
+<br><br><br>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfRzFpC3vdO7fWIPpTsdBZ3OPo8Oj50iNigIUSRpFwDf_PVQA/viewform?usp=header">hier geht es zur anmeldung</a>
 
 <header>
   <div class="overlay">
@@ -208,7 +222,9 @@
       <div class="content"><p>Direkt an Paola oder Sandro wenden. Anruf oder WhatsApp möglich. 🤍</p></div>
     </div>
   </div>
+
 </section>
+
 
 <script>
   document.querySelectorAll('.accordion-item button').forEach(btn => {
