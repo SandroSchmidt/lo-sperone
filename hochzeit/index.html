@@ -19,7 +19,7 @@
   header {
     position: relative;
     text-align: center;
-    color: #D25525;;
+    color:  #D25525;;
   }
   header::before {
     content: "";
@@ -40,8 +40,10 @@
     box-sizing: border-box;
   }
   header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-family: 'lumios marker', sans-serif;
+    src: url(./font/lumios-marker.woff)
+    text-align: center;
+    font-size: 4rem;
     margin: 0;
    
   }
@@ -49,7 +51,7 @@
     font-size: 1.2rem;
     max-width: 700px;
     text-align: center;
-    color: #D25525;
+    color: #1e4A5b;
     margin-top: 15px;
   }
 
@@ -57,13 +59,17 @@
   section {
     padding: 60px 20px;
     max-width: 900px;
+   
     margin: auto;
   }
   h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-family: 'lumios marker', sans-serif;
+    src: url(./font/lumios-marker.woff)
+    text-align: center;
+   
+    font-size: 3rem;
     margin-bottom: 20px;
- color: #1e4A5b; 
+ color: #D25525; 
   }
   h3 {
     font-size: 1.3rem;
@@ -78,8 +84,8 @@
   }
 
   /* Farbige Akzente */
-  .highlight-yellow { color: #FFD700; } /* Narzissengelb */
-  .highlight-grapefruit { color: #FF6F61; } /* Grapefruit */
+  .highlight-yellow { color: #fffff0; } /* Narzissengelb */
+  .highlight-grapefruit { color: #D25525; } /* Grapefruit */
 
   /* FAQ Accordion */
   .accordion { margin-top: 30px; }
@@ -93,16 +99,16 @@
     border: none;
     outline: none;
     cursor: pointer;
-    color: #4b3f2f;
+    color: #1e4A5b;
     transition: background 0.3s;
   }
-  .accordion-item button:hover { background: #f4f0eb; }
+  .accordion-item button:hover { background:#fffff0 ; }
   .accordion-item .content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
     padding: 0 20px;
-    background: #fff;
+    background: #fffff0;
   }
   .accordion-item .content p { padding: 15px 0; margin: 0; }
 
@@ -118,6 +124,16 @@
       top: 10px;
       right: 10px;
     }
+
+    button{
+      font-family: "Bodoni MT", "Didot", "Times New Roman", serif;
+    }
+    a{
+      font-family: 'lumios marker', sans-serif;
+    src: url(./font/lumios-marker.woff)
+      font-size: 3rem ;
+      
+    }
 </style>
 </head>
 <body>
@@ -127,22 +143,22 @@
       <button onclick="switchLanguage('it')">🇮🇹 IT</button>
       <button onclick="switchLanguage('en')">🇬🇧 EN</button>
     </div>
-<img src="./img/cover.png" style="width : 25%;align-items: center;"><img src="./img/3.png" style="width : 25%;align-items: center;"><img src="./img/4.png" style="width : 25%;align-items: center;"><br>
-<br><br><br>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSfRzFpC3vdO7fWIPpTsdBZ3OPo8Oj50iNigIUSRpFwDf_PVQA/viewform?usp=header">hier geht es zur anmeldung</a>
+<img src="./img/header wedding.jpg" style="width : 75%;align-items: center;"></img>
 
 <header>
   <div class="overlay">
-    <h1>💌 Hochzeit von Paola & Sandro</h1>
+    <h1> Ci sposiamo! Wir heiraten! We're getting married!</h1>
     <p>Wir freuen uns unglaublich, diesen besonderen Tag mit euch zu teilen.<br>
     Hier findet ihr alle wichtigen Informationen für eure Anreise, Unterkunft und den Ablauf unserer Feier.</p>
   </div>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRzFpC3vdO7fWIPpTsdBZ3OPo8Oj50iNigIUSRpFwDf_PVQA/viewform?usp=header">Seid ihr dabei? Sagt es uns in hier im Fragebogen</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRzFpC3vdO7fWIPpTsdBZ3OPo8Oj50iNigIUSRpFwDf_PVQA/viewform?usp=header">Seid ihr dabei? Sagt es uns in hier im Fragebogen!</a>
 </header>
 
 <section>
-  <h2>🌿 Wo finden die Feier und Zeremonie statt?</h2>
-  <p>Der Grillabend, die Hochzeitfeier, sowie das Frühstück finden alle bei uns am oder im <a href="https://maps.app.goo.gl/KKGJwHJKFqVHryDB6"><u>Haus</u></a>statt. </p>
+  <h2> 🌿 Wo finden die Feier und Zeremonie statt?</h2>
+ 
+
+  <p>Der Grillabend, die Hochzeitfeier, sowie das Frühstück finden alle bei uns am oder im <a href="https://maps.app.goo.gl/KKGJwHJKFqVHryDB6"><u>Haus</u></a> statt. </p>
   <p>Unsere freie Trauungszeremonie findet in unserem <a href="https://maps.app.goo.gl/gXcHKHWoNzjfZjMZ6"><u>Olivenhain</u></a> neben unserem Haus statt. Um 15h möchten wir zwischen Olivenbäumen und schöner Aussicht diesen besonderen Moment mit euch genießen. </p>
 </section>
 
@@ -170,7 +186,7 @@
     Wir sind hier Mitten in einer wunderschönen Weinregion, die dazu einlädt, das ein oder andere Weingut zu besuchen. Marchesi Antinori, Tenuta Vitalonga und Cantina Castel Noha sind nur ein paar sehr gute und teilweise international bekannte Namen der Weingüter in unserem Dorf Ficulle (
       Fun fact: unser Haus trägt das Wappen der Familie Antinori, bisher haben wir noch keine eindeutigen Informationen, was es damit aufsich hat). Weiter nördlich von Ficulle kommt ihr schnell in die Toskana. Solltet ihr hier noch Urlaub machen wollen, sind Montepulciano und Montalcino sehr bekannt fuer gute Weine 
       und ihren historischen Charme. Ausserdem sind Siena, Volterra, San Gimignano, Arezzo und natürlich Florenz einen Besuch Wert.</p>
-  <p>Tipp für alle, die über Rom anreisen: Am Ostersonntag spricht der Papst in Rom den traditionellen „Urbi et Orbi“-Segen, weshalb die Stadt sehr voll sein wird. Plant da am besten drumherum</p>
+  <p>Tipp für alle, die über Rom anreisen: Am Ostersonntag spricht der Papst in Rom den traditionellen „Urbi et Orbi“-Segen, weshalb die Stadt sehr voll sein wird. Plant da am besten drumherum.</p>
 </section>
 
 <section>
@@ -186,7 +202,7 @@
   <p><strong>🥂 Aperitivo:</strong> Anschließend stoßen wir gemeinsam an mit leckeren Kaltgetränken und lokalen Häppchen.</p>
   <p><strong>🌅 Sonnenuntergang:</strong> Eins der besten Dinge an unserem Garten ist der Sonnenuntergang, den wir gemeinsam genießen wollen</p>
   <p><strong>🍽️ Abendessen:</strong> Wir freuen uns auf ein mehrgängiges Menü mit regionalen Spezialitäten.</p>
-  <p><strong>💃 Tanz & Feier:</strong> Tanzschuhe an(behalten) – wir feiern bis tief in die Nacht!</p>
+  <p><strong><img src="./img/dancing icon.jpg" style="height: 2rem; vertical-align: middle;"></img> </strong> Tanz & Feier:</strong> Tanzschuhe an(behalten) – wir feiern bis tief in die Nacht!</p>
   <p><strong>🌙 Mitternachtssnack:</strong> Für alle, die noch Energie haben.</p>
   <h3>☀️ Samstag – Frühstück</h3>
   <p>Ab 11:00 Uhr gibts für alle, die noch nicht abreisen müssen, ein gemütliches, italienisches Frühstück.</p>
@@ -217,7 +233,7 @@
       <div class="content"><p>Während der Zeremonie nimmt unsere Fotografin die besonderen Momente für uns auf, daher seht bitte von der Handynutzung währenddessen ab. Danach gibt es hoffentlich noch viele schöne Momente, die ihr fotografisch selbst festhalten wollt. Wir möchten Euch ausserdem darum bitten, keine Fotos von Paola, Sandro und Lily auf Social Media zu posten. Danke für Euer Verständnis!</p></div>
     </div>
     <div class="accordion-item">
-      <button><img src="./img/dancing icon.jpg" style="height: 1em; vertical-align: middle;"></img> Feier & Party</button>
+      <button><img src="./img/dancing icon.jpg" style="height: 3em; vertical-align: middle;"></img> Feier & Party</button>
       <div class="content"><p>Tanzschuhe einpacken – wir feiern bis tief in die Nacht.</p></div>
     </div>
     <div class="accordion-item">
