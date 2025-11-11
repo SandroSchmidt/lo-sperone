@@ -15,6 +15,14 @@
   }
   a { text-decoration: none; color: inherit; }
 
+  @font-face {
+  font-family: 'Lumios Marker';
+  src: url('./font/lumios-marker.woff2') format('woff2'),
+       url('./font/lumios-marker.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+
   /* Header mit Foto */
   header {
     position: relative;
@@ -39,12 +47,13 @@
     padding: 20px;
     box-sizing: border-box;
   }
-  header h1 {
-    font-family: 'lumios marker', sans-serif;
-    src: url(./font/lumios-marker.woff)
-    text-align: center;
-    font-size: 4rem;
-    margin: 0;
+  header h1 
+    h1 {
+  font-family: 'Lumios Marker', sans-serif;
+  text-align: center;
+  font-size: 4rem;
+  margin: 0;
+}
    
   }
   header p {
