@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding – Paola & Sandro</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Base layout */
+  body {
+    margin: 0;
+    font-family: "Bodoni MT", "Didot", "Times New Roman", serif;
+    background: #fffff0;
+  }
+  a { 
+    text-decoration: none; 
+    color: inherit; 
+  }
+
+  @font-face {
+    font-family: 'Lumios Marker';
+    src: url('./font/Lumios-marker.woff2') format('woff2'),
+         url('./font/Lumios-Marker.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Header */
+  header {
+    position: relative;
+    text-align: center;
+    color: #D25525;
+  }
+  header::before {
+    content: "";
+    display: block;
+    background: url('header-placeholder.jpg') center/cover no-repeat;
+    width: 100%;
+    height: 400px;
+  }
+  header .overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 400px;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  header h1 {
+    font-family: 'Lumios Marker', sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    margin: 0;
+    color: #D25525;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    text-align: center;
+    color: #1e4A5b;
+    margin-top: 15px;
+  }
+
+  /* Sections */
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  h2 {
+    font-family: 'Lumios Marker', sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    margin: 20px;
+    color: #D25525; 
+  }
+  h3 {
+    font-family: 'Lumios Marker', sans-serif;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    text-align: center;
+    color: #D25525;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #1e4A5b;
+  }
+
+  /* Accent colors (if needed) */
+  .highlight-yellow { color: #fffff0; }
+  .highlight-grapefruit { color: #D25525; }
+
+  /* FAQ Accordion */
+  .accordion { margin-top: 30px; }
+  .accordion-item { border-top: 1px solid #ddd; }
+  .accordion-item button {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+    text-align: left;
+    background: #fdf9f4;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #1e4A5b;
+    transition: background 0.3s;
+  }
+  .accordion-item button:hover { background:#fffff0; }
+  .accordion-item .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+    background: #fffff0;
+  }
+  .accordion-item .content p { padding: 15px 0; margin: 0; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 { font-size: 2.2rem; }
+    header p { font-size: 1rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.1rem; }
+  }
+
+  .language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  button {
+    font-family: "Bodoni MT", "Didot", "Times New Roman", serif;
+  }
+  a.nav-link {
+    font-family: 'Lumios Marker', sans-serif;
+    font-size: 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+  <div class="language-switcher">
+    <button onclick="window.location.href='index.html'">🇩🇪 DE</button>
+    <button onclick="window.location.href='index_it.html'">🇮🇹 IT</button>
+    <button onclick="window.location.href='index_en.html'">🇬🇧 EN</button>
+  </div>
+
+  <div style="text-align:center;">
+    <img src="./img/header wedding.jpg" style="width:60%;">
+  </div>
+
+  <header>
+    <div style="display: flex; justify-content: center; align-items: center; height: 200px;" class="overlay">
+      <h2>We're getting married!</h2> 
+    </div>
+
+    <p style="text-align: center; margin: auto;">
+      We are so happy to share this special day with you.<br>
+      Here you will find all important information about getting here, accommodation and the schedule of our celebration.
+    </p>
+
+    <a class="nav-link" style="text-align: center; margin: auto; color:#D25525; display:block; margin-top:10px;"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSfRzFpC3vdO7fWIPpTsdBZ3OPo8Oj50iNigIUSRpFwDf_PVQA/viewform?usp=header">
+       <u>Will you join us? Let us know in this short form!</u>
+    </a>
+  </header>
+
+  <section>
+    <h2>Where will the celebration and ceremony take place?</h2>
+
+    <p>
+      The BBQ on Thursday, the wedding celebration on Friday and breakfast on Saturday will all take place at or in our 
+      <a href="https://maps.app.goo.gl/KKGJwHJKFqVHryDB6"><u>house</u></a>.
+    </p>
+    <p>
+      Our humanist wedding ceremony will take place in our 
+      <a href="https://maps.app.goo.gl/gXcHKHWoNzjfZjMZ6"><u>olive grove</u></a> next to the house. 
+      At 3 pm we would like to enjoy this special moment with you, surrounded by olive trees and a beautiful view.
+    </p>
+  </section>
+
+  <section>
+    <h2>Arrival & Parking</h2>
+    <p>
+      The easiest way to get here is by car, as public transport in the area is limited. There is plenty of parking space on site.
+      If you travel by train: there is a direct train to Orvieto from both Rome and Florence. From Orvieto it is about a 
+      20-minute drive to our house.
+      Please organise your journey yourself. We are happy to help you find a lift with other guests. In the questionnaire, 
+      please indicate whether you are coming by car or need support.
+    </p>
+  </section>
+
+  <section>
+    <h2>Dress code</h2>
+    <p>
+      We are looking forward to springlike festive outfits – colourful and joyful. Jeans can stay in the wardrobe this time.
+      Please bring something warm for the evening and shoes that are comfortable to wear in the garden.
+    </p>
+  </section>
+
+  <section>
+    <h2>Accommodation</h2>
+    <p>
+      You can find accommodation via booking platforms such as booking.com, Airbnb or Vrbo. The nearest village is Ficulle 
+      (about 5 minutes by car); Orvieto is around 20 minutes away.
+    </p>
+    <p>
+      As our celebration takes place over Easter, we recommend booking early so you can find a place that suits you.
+    </p>
+  </section>
+
+  <section>
+    <h2>Holiday in the region</h2>
+    <p>
+      The area around our home is beautiful – rolling hills, small villages and great food. We live in Umbria; places such as 
+      Perugia, Assisi, Città della Pieve, Lago di Bolsena and Orvieto are wonderful destinations that we highly recommend.
+      We are right in the middle of a wine region, inviting you to visit one or two wineries. Marchesi Antinori, Tenuta Vitalonga 
+      and Cantina Castel Noha are just a few of the very good and partly internationally known wineries in our village, Ficulle
+      (fun fact: our house bears the coat of arms of the Antinori family – we have not yet found a clear explanation for this).
+      Further north from Ficulle you quickly reach Tuscany. If you plan to spend more time there, Montepulciano and Montalcino 
+      are well known for their excellent wines and historic charm. Siena, Volterra, San Gimignano, Arezzo and of course Florence 
+      are also well worth a visit.
+    </p>
+    <p>
+      A small tip for those arriving via Rome: on Easter Sunday, the Pope gives the traditional “Urbi et Orbi” blessing in Rome, 
+      so the city will be very crowded. It may be worth planning around this.
+    </p>
+  </section>
+
+  <section>
+    <h2>Schedule</h2>
+   
+    <p>
+      We would like this day to be relaxed and warm, with plenty of time to arrive, enjoy and celebrate together.
+    </p>
+
+    <h3>
+      <img src="./img/BBQ icon.jpg" style="height: 1.8em; vertical-align: middle;">
+      Thursday, 9 April – Welcome & BBQ
+    </h3>
+    <p>
+      For everyone arriving early: on Thursday at 17:00 we invite you to a BBQ at the house.
+    </p>
+
+    <h3>💐 Friday – Wedding Day</h3>
+    <p><strong>🕒 Arrival:</strong> From 14:30 you are warmly welcome to join us.</p>
+    <p><strong>💍 Humanist ceremony:</strong> At 15:00 our ceremony in the olive grove begins.</p>
+    <p><strong>🍰 Cake, coffee & tea:</strong> We will also celebrate our February and March birthdays together.</p>
+    <p><strong>🥂 Aperitivo:</strong> Afterwards we will toast with refreshing drinks and local snacks.</p>
+    <p><strong>🌅 Sunset:</strong> One of the best things about our garden is the sunset – we want to enjoy it together.</p>
+    <p><strong>🍽️ Dinner:</strong> We are looking forward to a multi-course menu with regional specialities.</p>
+    <p>
+      <strong>
+        <img src="./img/dancing icon.jpg" style="height: 2rem; vertical-align: middle;"> 
+        Dance & Party:
+      </strong>
+      Put on your dancing shoes – we will celebrate late into the night.
+    </p>
+    <p><strong>🌙 Midnight snack:</strong> For everyone who still has energy.</p>
+
+    <h3>☀️ Saturday – Breakfast</h3>
+    <p>
+      From 11:00 there will be a relaxed Italian breakfast for everyone who is still around and not leaving yet.
+    </p>
+  </section>
+
+  <section>
+    <h2>💬 Frequently Asked Questions (FAQ)</h2>
+    
+    <div class="accordion">
+      <div class="accordion-item">
+        <button>🍽️ Food & Drinks</button>
+        <div class="content">
+          <p>
+            There will be vegetarian options. Please let us know about any allergies, intolerances or preferences in the questionnaire.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>🎁 Gifts</button>
+        <div class="content">
+          <p>
+            Your presence really is the most precious gift for us. The fact that you are taking the time and travelling such a distance 
+            means more to us than we can put into words. If you would still like to give something, you are very welcome to contribute 
+            to our renovation fund.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>👶 Children</button>
+        <div class="content">
+          <p>
+            Children are of course very welcome. We will provide childcare in the afternoon after the ceremony.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>🐾 Pets</button>
+        <div class="content">
+          <p>
+            As much as we love animals, we kindly ask you not to bring pets to the celebration.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>📸 Photos & Social Media</button>
+        <div class="content">
+          <p>
+            During the ceremony our photographer will capture the special moments for us, so we kindly ask you not to use your phones 
+            at that time. Afterwards there will hopefully be plenty of beautiful moments for you to photograph yourselves.
+            We also kindly ask you not to post photos of Paola, Sandro or Lily on social media. Thank you for your understanding.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>
+          <img src="./img/dancing icon.jpg" style="height: 3em; vertical-align: middle;">
+          Celebration & Party
+        </button>
+        <div class="content">
+          <p>
+            Pack your dancing shoes – we plan to celebrate late into the night.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>🚙 Return & Transport</button>
+        <div class="content">
+          <p>
+            We will finalise details about transport and return journeys closer to the wedding. Please enter your accommodation 
+            in the questionnaire so that we can plan better and support you with transport if needed.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>📞 Any other questions?</button>
+        <div class="content">
+          <p>
+            Just get in touch with Paola or Sandro directly, by phone or WhatsApp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.accordion-item button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
