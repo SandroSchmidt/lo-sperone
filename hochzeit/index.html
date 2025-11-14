@@ -10,7 +10,7 @@
   body {
     margin: 0;
    font-family: "Bodoni MT", "Didot", "Times New Roman", serif;
-    color: #1e4A5b; 
+  
     background: #fffff0;
   }
   a { text-decoration: none; color: inherit; }
@@ -22,12 +22,13 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  color: #D25525;
 
   /* Header mit Foto */
   header {
     position: relative;
     text-align: center;
-    color:  #D25525;;
+    color:  #D25525 ;
   }
   header::before {
     content: "";
@@ -35,6 +36,7 @@
     background: url('header-placeholder.jpg') center/cover no-repeat;
     width: 100%;
     height: 400px;
+    color: #D25525;
   }
   header .overlay {
     position: absolute;
@@ -46,6 +48,7 @@
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    color: #D25525;
   }
   header h1 
     h1 {
@@ -53,6 +56,7 @@
   text-align: center;
   font-size: 4rem;
   margin: 0;
+  color: #D25525;
 }
    
   }
@@ -75,20 +79,20 @@
     font-family: 'Lumios Marker', sans-serif;
   text-align: center;
   font-size: 3rem;
-  margin: 20px
-
- color: #D25525; 
+  margin: 20px;
+  color: #D25525; 
   }
   h3 {
-    font-size: 1.3rem;
+    font-family: 'Lumios Marker', sans-serif;
+    font-size: 1.8rem;
     margin-top: 20px;
-    color: #1e4A5b; /* Grapefruit */
+    color: #D25525;; /* Grapefruit */
   }
   p {
     font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 20px;
-
+    color: #1e4A5b
   }
 
   /* Farbige Akzente */
@@ -138,7 +142,7 @@
     }
     a{
       font-family: 'lumios marker', sans-serif;
-    src: url(./font/lumios-marker.woff)
+    src: url(./font/lumios-marker.woff);
       font-size: 3rem ;
       
     }
@@ -154,42 +158,47 @@
 <img src="./img/header wedding.jpg" style="width : 75%;align-items: center;"></img>
 
 <header>
-  <div class="overlay">
-    <h1> Ci sposiamo! Wir heiraten! We're getting married!</h1>
-    <p>Wir freuen uns unglaublich, diesen besonderen Tag mit euch zu teilen.<br>
-    Hier findet ihr alle wichtigen Informationen für eure Anreise, Unterkunft und den Ablauf unserer Feier.</p>
+  
+  
+  <div   style="display: flex; justify-content: center; align-items: center; height: 200px;" class="overlay">
+    <h2> Ci sposiamo! Wir heiraten! We're getting married!</h2> <br>
   </div>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRzFpC3vdO7fWIPpTsdBZ3OPo8Oj50iNigIUSRpFwDf_PVQA/viewform?usp=header">Seid ihr dabei? Sagt es uns in hier im Fragebogen!</a>
+    <p style="text-align: center;margin: auto;">Wir freuen uns so, diesen besonderen Tag mit euch zu teilen.<br>
+    Hier findet ihr alle wichtigen Informationen für eure Anreise, Unterkunft und den Ablauf unserer Feier.</p>
+  <!-- link zentrieren "seid ihr dabei" --> 
+  <a style="text-align: center;margin: auto;color:#D25525"   href="https://docs.google.com/forms/d/e/1FAIpQLSfRzFpC3vdO7fWIPpTsdBZ3OPo8Oj50iNigIUSRpFwDf_PVQA/viewform?usp=header">Seid ihr dabei? Sagt es uns in hier im Fragebogen!</a>
 </header>
 
-<section>
-  <h2> 🌿 Wo finden die Feier und Zeremonie statt?</h2>
- 
 
+<!-- link zentrieren -->
+<section>
+  <h2>  Wo finden die Feier und Zeremonie statt?</h2>
+ 
+<!--hyperlink worte gleichgross wie rest vom text-->>
   <p>Der Grillabend, die Hochzeitfeier, sowie das Frühstück finden alle bei uns am oder im <a href="https://maps.app.goo.gl/KKGJwHJKFqVHryDB6"><u>Haus</u></a> statt. </p>
   <p>Unsere freie Trauungszeremonie findet in unserem <a href="https://maps.app.goo.gl/gXcHKHWoNzjfZjMZ6"><u>Olivenhain</u></a> neben unserem Haus statt. Um 15h möchten wir zwischen Olivenbäumen und schöner Aussicht diesen besonderen Moment mit euch genießen. </p>
 </section>
 
 <section>
-  <h2>🚗 Anreise & Parken</h2>
+  <h2> Anreise & Parken</h2>
   <p>Am bequemsten reist ihr mit dem Auto an, da die öffentlichen Verkehrsmittel hier nur selten fahren. Es gibt ausreichend Parkmöglichkeiten vor Ort.
   Wer mit dem Zug kommt: Von Rom oder Florenz fährt ein direkter Zug nach Orvieto. Von dort sind es ca. 20 Minuten bis zu uns.
   Bitte organisiert den Transport selbst. Wir können Euch dabei unterstützen, eine Mitfahrgelegenheit mit anderen Gästen zu finden. Tragt dazu bitte im Fragebogen ein, ob ihr mit dem Auto kommt oder Unterstützung braucht.</p>
 </section>
 
 <section>
-  <h2>👗 Dresscode</h2>
+  <h2> Dresscode</h2>
   <p>Wir freuen uns über frühlingshaft festliche Outfits – gern farbenfroh und fröhlich. Jeans dürfen diesmal im Schrank bleiben. Denkt an etwas Warmes für den Abend und an Schuhe, die sich auch im Garten gut tragen lassen.</p>
 </section>
 
 <section>
-  <h2>🏡 Unterkunft</h2>
+  <h2> Unterkunft</h2>
   <p>Unterkünfte findet ihr über z.B. booking.com, Airbnb oder Vrbo. Der nächste Ort ist Ficulle (ca. 5 Minuten Fahrt), Orvieto ist etwa 20 Minuten entfernt.</p>
   <p>Da unsere Feier in die Osterzeit fällt, empfiehlt es sich, frühzeitig zu buchen, damit ihr eine passende Unterkunft bekommt. </p>
 </section>
 
 <section>
-  <h2>🌞 Urlaub in der Region</h2>
+  <h2> Urlaub in der Region</h2>
   <p>Die Region rund um unsere Location ist wunderschön – sanfte Hügel, kleine Dörfer und leckeres Essen. Wir wohnen in Umbrien, hier sind Perugia, Assisi, Citta della Pieve, Lago di Bolsena, Orvieto wunderschöne Orte, die wir euch für einen Besuch ans Herz legen möchten. 
     Wir sind hier Mitten in einer wunderschönen Weinregion, die dazu einlädt, das ein oder andere Weingut zu besuchen. Marchesi Antinori, Tenuta Vitalonga und Cantina Castel Noha sind nur ein paar sehr gute und teilweise international bekannte Namen der Weingüter in unserem Dorf Ficulle (
       Fun fact: unser Haus trägt das Wappen der Familie Antinori, bisher haben wir noch keine eindeutigen Informationen, was es damit aufsich hat). Weiter nördlich von Ficulle kommt ihr schnell in die Toskana. Solltet ihr hier noch Urlaub machen wollen, sind Montepulciano und Montalcino sehr bekannt fuer gute Weine 
@@ -198,9 +207,9 @@
 </section>
 
 <section>
-  <h2>🕊️ Ablauf der Feier</h2>
+  <h2> Ablauf</h2>
   <p>Wir möchten den Tag entspannt und herzlich mit euch verbringen, mit Zeit zum Ankommen, Genießen und Feiern.</p>
-  <h3>🔥 Donnerstag, 9.April – Willkommen & BBQ </h3>
+  <h3><img src="./img/BBQ icon.jpg" style="height: 1.8em; vertical-align: middle;"></img> Donnerstag, 9.April – Willkommen & BBQ </h3>
   <p> </p>
   <p>Für alle, die schon früher anreisen: Am Donnerstag um 17:00 Uhr laden wir euch zu einem BBQ am Haus ein.</p>
   <h3>💐 Freitag – Der Hochzeitstag</h3>
