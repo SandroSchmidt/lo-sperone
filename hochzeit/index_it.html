@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrimonio – Paola & Sandro</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Layout di base */
+  body {
+    margin: 0;
+    font-family: "Bodoni MT", "Didot", "Times New Roman", serif;
+    background: #fffff0;
+  }
+  a { 
+    text-decoration: none; 
+    color: inherit; 
+  }
+
+  @font-face {
+    font-family: 'Lumios Marker';
+    src: url('./font/Lumios-marker.woff2') format('woff2'),
+         url('./font/Lumios-Marker.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Header */
+  header {
+    position: relative;
+    text-align: center;
+    color: #D25525;
+  }
+  header::before {
+    content: "";
+    display: block;
+    background: url('header-placeholder.jpg') center/cover no-repeat;
+    width: 100%;
+    height: 400px;
+  }
+  header .overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 400px;
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  header h1 {
+    font-family: 'Lumios Marker', sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    margin: 0;
+    color: #D25525;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    text-align: center;
+    color: #1e4A5b;
+    margin-top: 15px;
+  }
+
+  /* Sezioni */
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  h2 {
+    font-family: 'Lumios Marker', sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    margin: 20px;
+    color: #D25525; 
+  }
+  h3 {
+    font-family: 'Lumios Marker', sans-serif;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    text-align: center;
+    color: #D25525;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #1e4A5b;
+  }
+
+  /* Colori accento (se servono) */
+  .highlight-yellow { color: #fffff0; }
+  .highlight-grapefruit { color: #D25525; }
+
+  /* FAQ Accordion */
+  .accordion { margin-top: 30px; }
+  .accordion-item { border-top: 1px solid #ddd; }
+  .accordion-item button {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
+    text-align: left;
+    background: #fdf9f4;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #1e4A5b;
+    transition: background 0.3s;
+  }
+  .accordion-item button:hover { background:#fffff0; }
+  .accordion-item .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+    background: #fffff0;
+  }
+  .accordion-item .content p { padding: 15px 0; margin: 0; }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 { font-size: 2.2rem; }
+    header p { font-size: 1rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.1rem; }
+  }
+
+  .language-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  button {
+    font-family: "Bodoni MT", "Didot", "Times New Roman", serif;
+  }
+  a.nav-link {
+    font-family: 'Lumios Marker', sans-serif;
+    font-size: 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+  <div class="language-switcher">
+    <button onclick="window.location.href='index.html'">🇩🇪 DE</button>
+    <button onclick="window.location.href='index_it.html'">🇮🇹 IT</button>
+    <button onclick="window.location.href='index_en.html'">🇬🇧 EN</button>
+  </div>
+
+  <div style="text-align:center;">
+    <img src="./img/header wedding.jpg" style="width:60%;">
+  </div>
+
+  <header>
+    <div style="display: flex; justify-content: center; align-items: center; height: 200px;" class="overlay">
+      <h2>Ci sposiamo!</h2> 
+    </div>
+
+    <p style="text-align: center; margin: auto;">
+      Siamo felicissimi di poter condividere questo giorno speciale con voi.<br>
+      Qui trovate tutte le informazioni importanti sul viaggio, gli alloggi e lo svolgimento della nostra festa.
+    </p>
+
+    <a class="nav-link" style="text-align: center; margin: auto; color:#D25525; display:block; margin-top:10px;"
+       href="https://docs.google.com/forms/d/e/1FAIpQLSfRzFpC3vdO7fWIPpTsdBZ3OPo8Oj50iNigIUSRpFwDf_PVQA/viewform?usp=header">
+       Ci sarete? Fatecelo sapere con questo breve questionario!
+    </a>
+  </header>
+
+  <section>
+    <h2>Dove si svolgono la festa e la cerimonia?</h2>
+
+    <p>
+      La grigliata del giovedì, la festa di matrimonio del venerdì e la colazione del sabato si terranno tutte 
+      presso la nostra 
+      <a href="https://maps.app.goo.gl/KKGJwHJKFqVHryDB6"><u>casa</u></a>.
+    </p>
+    <p>
+      La nostra cerimonia simbolica si svolgerà nel nostro 
+      <a href="https://maps.app.goo.gl/gXcHKHWoNzjfZjMZ6"><u>uliveto</u></a> accanto alla casa. 
+      Alle 15:00 vorremmo vivere insieme a voi questo momento speciale, circondati dagli ulivi e da una splendida vista.
+    </p>
+  </section>
+
+  <section>
+    <h2>Arrivo e parcheggio</h2>
+    <p>
+      Il modo più comodo per arrivare è in macchina, perché i mezzi pubblici nella zona sono piuttosto limitati. 
+      Presso la casa ci sono sufficienti possibilità di parcheggio.
+      Chi arriva in treno: da Roma o Firenze parte un treno diretto per Orvieto. Da Orvieto ci vogliono circa 
+      20 minuti di macchina per arrivare da noi.
+      Vi chiediamo di organizzare il viaggio in autonomia. Saremo però felici di aiutarvi a trovare passaggi 
+      con altri ospiti. Nel questionario potete indicare se arrivate in macchina o se avete bisogno di supporto.
+    </p>
+  </section>
+
+  <section>
+    <h2>Dresscode</h2>
+    <p>
+      Ci farà piacere vedere abiti eleganti primaverili – volentieri colorati e allegri. 
+      Questa volta i jeans possono rimanere nell’armadio. Vi consigliamo di portare qualcosa di più caldo 
+      per la sera e scarpe adatte anche al giardino.
+    </p>
+  </section>
+
+  <section>
+    <h2>Alloggi</h2>
+    <p>
+      Potete trovare alloggi tramite piattaforme come booking.com, Airbnb o Vrbo. 
+      Il paese più vicino è Ficulle (circa 5 minuti in macchina), mentre Orvieto dista circa 20 minuti.
+    </p>
+    <p>
+      Poiché la nostra festa cade nel periodo di Pasqua, vi consigliamo di prenotare con un po’ di anticipo 
+      per trovare l’alloggio che fa per voi.
+    </p>
+  </section>
+
+  <section>
+    <h2>Vacanze nella regione</h2>
+    <p>
+      La zona intorno a casa nostra è bellissima – colline dolci, piccoli borghi e ottimo cibo. 
+      Viviamo in Umbria; città come Perugia, Assisi, Città della Pieve, il Lago di Bolsena e Orvieto 
+      sono mete splendide che vi consigliamo di visitare.
+      Ci troviamo nel mezzo di una regione vinicola che invita a scoprire una o più cantine. 
+      Marchesi Antinori, Tenuta Vitalonga e Cantina Castel Noha sono solo alcuni dei nomi molto validi 
+      e in parte conosciuti anche a livello internazionale, tutti nel nostro paese, Ficulle 
+      (curiosità: la nostra casa porta lo stemma della famiglia Antinori – per ora non abbiamo ancora 
+      scoperto il motivo preciso).
+      Proseguendo verso nord da Ficulle si arriva in poco tempo in Toscana. Se volete fermarvi anche lì 
+      per qualche giorno, Montepulciano e Montalcino sono molto conosciute per i loro vini eccellenti 
+      e il loro fascino storico. Anche Siena, Volterra, San Gimignano, Arezzo e naturalmente Firenze 
+      meritano una visita.
+    </p>
+    <p>
+      Un piccolo consiglio per chi passa da Roma: la domenica di Pasqua il Papa pronuncia la benedizione 
+      tradizionale “Urbi et Orbi”, per cui la città sarà molto affollata. Forse può valere la pena 
+      pianificare il viaggio tenendone conto.
+    </p>
+  </section>
+
+  <section>
+    <h2>Programma</h2>
+   
+    <p>
+      Vorremmo vivere questa giornata in modo rilassato e accogliente, con tempo per arrivare con calma, 
+      godersi il posto e festeggiare insieme.
+    </p>
+
+    <h3>
+      <img src="./img/BBQ icon.jpg" style="height: 1.8em; vertical-align: middle;">
+      Giovedì 9 aprile – Benvenuto e BBQ
+    </h3>
+    <p>
+      Per chi arriva già il giovedì: alle 17:00 vi invitiamo a una grigliata in giardino, a casa nostra.
+    </p>
+
+    <h3>💐 Venerdì – Giorno del matrimonio</h3>
+    <p><strong>🕒 Arrivo:</strong> Dalle 14:30 siete caldamente invitati ad arrivare e mettervi comodi.</p>
+    <p><strong>💍 Cerimonia simbolica:</strong> Alle 15:00 inizierà la nostra cerimonia nell’uliveto.</p>
+    <p><strong>🍰 Torta, caffè e tè:</strong> Coglieremo l’occasione anche per festeggiare insieme i nostri compleanni di febbraio e marzo.</p>
+    <p><strong>🥂 Aperitivo:</strong> Poi brinderemo con bevande rinfrescanti e stuzzichini locali.</p>
+    <p><strong>🌅 Tramonto:</strong> Una delle cose più belle del nostro giardino è il tramonto – vorremmo godercelo insieme a voi.</p>
+    <p><strong>🍽️ Cena:</strong> Non vediamo l’ora di condividere con voi un menù di più portate con specialità della regione.</p>
+    <p>
+      <strong>
+        <img src="./img/dancing icon.jpg" style="height: 2rem; vertical-align: middle;"> 
+        Balli e festa:
+      </strong>
+      Scarpe comode (o da ballo) – la festa andrà avanti fino a tardi!
+    </p>
+    <p><strong>🌙 Spuntino di mezzanotte:</strong> Per chi avrà ancora energia più tardi.</p>
+
+    <h3>☀️ Sabato – Colazione</h3>
+    <p>
+      Dalle 11:00 ci sarà una colazione italiana rilassata per chi non deve ancora ripartire.
+    </p>
+  </section>
+
+  <section>
+    <h2>💬 Domande frequenti (FAQ)</h2>
+    
+    <div class="accordion">
+      <div class="accordion-item">
+        <button>🍽️ Cibo e bevande</button>
+        <div class="content">
+          <p>
+            Ci saranno opzioni vegetariane. Vi preghiamo di indicarci eventuali allergie, intolleranze 
+            o preferenze nel questionario.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>🎁 Regali</button>
+        <div class="content">
+          <p>
+            La vostra presenza è davvero il regalo più bello per noi. 
+            Il fatto che vi prendiate il tempo e facciate un viaggio così lungo significa più di quanto riusciamo a esprimere a parole.
+            Se desiderate comunque farci un regalo, saremo molto felici di un contributo al nostro fondo per la ristrutturazione della casa.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>👶 Bambini</button>
+        <div class="content">
+          <p>
+            I bambini sono naturalmente i benvenuti! Nel pomeriggio, dopo la cerimonia, sarà organizzato un servizio di baby-sitting.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>🐾 Animali domestici</button>
+        <div class="content">
+          <p>
+            Anche se amiamo molto gli animali, vi chiediamo gentilmente di non portare animali domestici alla festa.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>📸 Foto e social media</button>
+        <div class="content">
+          <p>
+            Durante la cerimonia la nostra fotografa si occuperà di immortalare i momenti più importanti, 
+            quindi vi chiediamo di non usare il cellulare in quel momento.
+            Dopo la cerimonia, speriamo che ci saranno molti altri momenti belli da fotografare.
+            Vi chiediamo inoltre di non pubblicare foto di Paola, Sandro o Lily sui social media. 
+            Grazie di cuore per la vostra comprensione.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>
+          <img src="./img/dancing icon.jpg" style="height: 3em; vertical-align: middle;">
+          Festa e balli
+        </button>
+        <div class="content">
+          <p>
+            Portate le scarpe da ballo – abbiamo intenzione di festeggiare fino a tardi!
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>🚙 Rientro e trasporti</button>
+        <div class="content">
+          <p>
+            Definiremo i dettagli relativi ai trasporti e ai rientri più vicino alla data del matrimonio. 
+            Vi chiediamo di indicare nel questionario dove alloggerete, così potremo organizzare meglio 
+            e aiutarvi eventualmente con i passaggi.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button>📞 Altre domande?</button>
+        <div class="content">
+          <p>
+            In caso di dubbi o domande, potete contattare direttamente Paola o Sandro, per telefono o via WhatsApp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.accordion-item button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
