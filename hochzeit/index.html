@@ -88,7 +88,7 @@
     font-size: 2.3rem;
     margin-top: 10px;
     text-align: center;
-    color: #D25525;; /* Grapefruit */
+    color: #D25525; /* Grapefruit */
   }
 
   p {
@@ -149,9 +149,57 @@
       font-size: 1.5rem ;
       
     }
+    .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#fffff0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #D25525;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 </style>
+
 </head>
 <body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Feier & Zeremonie</a>
+  <a href="#">Anreise & Parken</a>
+  <a href="#">Unterkunft</a>
+  <a href="#">Dresscode</a>
+   <a href="#">Urlaub in der Region</a>
+    <a href="#">FAQs</a>
+</div>
 
   <div class="language-switcher">
 <button onclick="window.location.href='index.html'">🇩🇪 DE</button>
@@ -162,10 +210,11 @@
 <div style="text-align:center;">
   <img src="./img/header website 1.jpg" style="width:100%;">
 </div>
+<span style="font-size:30px;cursor:pointer; color: #D25525; font-family: 'Lumios Marker', sans-serif" onclick="openNav()">&#9776; Menu</span>
 <header>
 
   <div   style="display: flex; justify-content: center; align-items: center;" class="overlay">
-    <h2> Ci sposiamo! Wir heiraten! We're getting married!</h2> 
+    <h2> Ci sposiamo! Wir heiraten!</h2> 
     <p style="text-align: center;margin: auto;">Wir freuen uns so, diesen besonderen Tag mit euch zu teilen.<br>
       Hier findet ihr alle wichtigen Informationen für eure Anreise, Unterkunft und den Ablauf unserer Feier.</p>
   
@@ -179,17 +228,29 @@
 </header>
 
 <section>
-  <h2>  Wo finden die Feier und Zeremonie statt?</h2>
+  <h2>  Feier & Zeremonie</h2>
 
   <p>Der Grillabend, die Hochzeitfeier, sowie das Frühstück finden alle bei uns am oder im <a href="https://maps.app.goo.gl/KKGJwHJKFqVHryDB6"><u>Haus</u></a> statt. </p>
-  <p>Unsere freie Trauungszeremonie findet in unserem <a href="https://maps.app.goo.gl/gXcHKHWoNzjfZjMZ6"><u>Olivenhain</u></a> neben unserem Haus statt. Um 15h möchten wir zwischen Olivenbäumen und schöner Aussicht diesen besonderen Moment mit euch genießen. </p>
+  <p>Unsere freie Trauungszeremonie findet in unserem <a href="https://maps.app.goo.gl/gXcHKHWoNzjfZjMZ6"><u>Olivenhain</u></a> neben unserem Haus statt. Um 15h möchten wir zwischen Olivenbäumen und schöner Aussicht diesen besonderen Moment mit euch genießen. Weiter unten auf der Website findet Ihr mehr Informationen zum Ablauf.</p>
 </section>
 
 <section>
   <h2> Anreise & Parken</h2>
-  <p>Am bequemsten reist ihr mit dem Auto an, da die öffentlichen Verkehrsmittel hier nur selten fahren. Es gibt ausreichend Parkmöglichkeiten vor Ort.
-  Wer mit dem Zug kommt: Von Rom oder Florenz fährt ein direkter Zug nach Orvieto. Von dort sind es ca. 20 Minuten bis zu uns.
-  Bitte organisiert den Transport selbst. Wir können Euch dabei unterstützen, eine Mitfahrgelegenheit mit anderen Gästen zu finden. Tragt dazu bitte im Fragebogen ein, ob ihr mit dem Auto kommt oder Unterstützung braucht.</p>
+  <p>Es gibt mehrere Flughäfen, die für eure Anreise geeignet sind. Am einfachsten ist meist Rom Fiumicino, da es viele tägliche Flüge von und nach Deutschland gibt. Auch Rom Ciampino ist gut erreichbar. Weitere Optionen sind Perugia (am nächsten), Pisa (oft besonders günstig) und Florenz (gut angebunden, aber weniger passende Verbindungen gefunden).
+</p>
+<p> Schaut einfach, welcher Flughafen für euch am besten passt – Google Flights oder Skyscanner helfen bei der Orientierung. Unsere Erfahrung: Direkt bei der Airline zu buchen lohnt sich oft.
+</p>
+<p>Vom Flughafen kommt ihr am bequemsten mit dem Mietwagen zu uns. Alternativ könnt ihr mit dem Zug nach Orvieto oder Fabro/Ficulle fahren; besonders aus Rom gibt es gute Verbindungen. Auf trenitalia.it findet ihr passende Züge. Wichtig zu wissen: In Italien gibt es verschiedene Anbieter, und Tickets sind meist nicht beliebig zwischen ihnen gültig. Wir selbst hatten bisher aber immer gute Erfahrungen.
+</p>
+<p>Von Orvieto oder Fabro sind es etwa 15–20 Minuten mit dem Auto zu uns.
+</p>
+<p>Bitte organisiert eure Anreise zu unserem Haus selbst. Es gibt genügend Parkplätze vor dem Haus und im Olivenhain. Wir helfen aber gern bei der Vermittlung von Fahrgemeinschaften – tragt dazu einfach im Fragebogen ein, ob ihr mit dem Auto kommt oder eine Mitfahrgelegenheit sucht. Für den Transport zu euren Unterkünften am Abend der Hochzeit überlegen wir noch eine gute Lösung. Gebt im Fragebogen bitte auch eure Unterkunft an, damit wir gut planen können.</p>
+</section>
+
+<section>
+  <h2> Unterkunft</h2>
+  <p>Unterkünfte findet ihr über z.B. booking.com, Airbnb oder Vrbo. Zu Eurer Orientierung - unser Haus befindet sich <a href="https://maps.app.goo.gl/KKGJwHJKFqVHryDB6"><u>hier</u></a>. Der nächste Ort ist Ficulle (ca. 5 Minuten Fahrt), Orvieto ist etwa 20 Minuten entfernt.</p>
+  <p>Da unsere Feier in die Osterzeit fällt, empfiehlt es sich, frühzeitig zu buchen, damit ihr eine passende Unterkunft bekommt. </p>
 </section>
 
 <section>
@@ -197,11 +258,7 @@
   <p>Wir freuen uns über frühlingshaft festliche Outfits – gern farbenfroh und fröhlich. Jeans dürfen diesmal im Schrank bleiben. Denkt an etwas Warmes für den Abend und an Schuhe, die sich auch im Garten gut tragen lassen.</p>
 </section>
 
-<section>
-  <h2> Unterkunft</h2>
-  <p>Unterkünfte findet ihr über z.B. booking.com, Airbnb oder Vrbo. Der nächste Ort ist Ficulle (ca. 5 Minuten Fahrt), Orvieto ist etwa 20 Minuten entfernt.</p>
-  <p>Da unsere Feier in die Osterzeit fällt, empfiehlt es sich, frühzeitig zu buchen, damit ihr eine passende Unterkunft bekommt. </p>
-</section>
+
 
 <section>
   <h2> Urlaub in der Region</h2>
@@ -276,6 +333,13 @@
       }
     });
   });
+  function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
 </script>
 
 </body>
